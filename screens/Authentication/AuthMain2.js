@@ -6,6 +6,7 @@ import {
   Modal,
   FlatList,
   TouchableOpacity,
+  KeyboardAvoidingView,
   TouchableWithoutFeedback,
   StyleSheet
 }  from  'react-native';
@@ -552,7 +553,8 @@ const AuthMain2 = ({navigation}) => {
   }
   
   return (
-    <View
+    <KeyboardAvoidingView
+      behavior = {Platform.OS === "ios" ? "padding" : null}
       style ={{
         flex: 1,
         paddingHorizontal: SIZES.padding,
@@ -599,7 +601,7 @@ const AuthMain2 = ({navigation}) => {
     {/* Contry Modal*/}
      {renderCountryModal()}
 
-    </View>
+    </KeyboardAvoidingView>
   )
 }
 
